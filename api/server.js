@@ -1,14 +1,12 @@
-
-
 /**
  * Module dependencies.
  */
 
 var app = require('./app');
 var debug = require('debug')('musikquiz-online:server');
-var https = require('https');
+var http = require('https');
 const fs = require('fs');
-
+/*
 const options = {
     key: fs.readFileSync('key.pem'),
     cert: fs.readFileSync('cert.pem')
@@ -25,7 +23,7 @@ app.set('port', port);
  * Create HTTP server.
  */
 
-var server = https.createServer(options, app);
+var server = http.createServer(app);
 
 /**
  * Listen on provided port, on all network interfaces.
