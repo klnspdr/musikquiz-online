@@ -4,8 +4,7 @@
 
 var app = require('./app');
 var debug = require('debug')('musikquiz-online:server');
-var http = require('https');
-const fs = require('fs');
+var http = require('http');
 /*
 const options = {
     key: fs.readFileSync('key.pem'),
