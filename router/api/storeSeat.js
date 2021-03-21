@@ -1,6 +1,6 @@
 let express = require('express');
 let router = express.Router();
-const {storeSeat, getSeats, resetSeat} = require('../modules/manageData');
+const {storeSeat, getSeats, resetSeat} = require('../../modules/manageData');
 
 router.post('/', function (req, res, next) {
     let seatValue = parseInt(req.query.seat);

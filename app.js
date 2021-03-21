@@ -6,10 +6,9 @@ let logger = require('morgan');
 let cors = require('cors');
 
 
-let indexRouter = require('./routes/index');
-let getSeatsRouter = require('./routes/getSeats');
-let storeSeatRouter = require('./routes/storeSeat');
-let resetSeatsRouter = require('./routes/resetSeats');
+let frontendRouter = require('./router/frontend');
+let apiRouter = require('./router/api');
+let assetsRouter = require('./router/frontend/assets');
 
 let app = express();
 
@@ -33,10 +32,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', indexRouter);
-app.use('/getSeats', getSeatsRouter);
-app.use('/storeSeat', storeSeatRouter);
-app.use('/resetSeats', resetSeatsRouter);
+app.use('/', frontendRouter);
+app.use('/api', apiRouter);
+app.use('/assets', assetsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

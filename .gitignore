@@ -40,11 +40,11 @@ bower_components
 build/Release
 
 # Dependency directories
-api/node_modules/
-api/jspm_packages/
+node_modules/
+jspm_packages/
 
 # Startup Scripts
-/api/bin/
+bin/
 
 # TypeScript v1 declaration files
 typings/
