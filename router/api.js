@@ -1,13 +1,10 @@
 let express = require('express');
 let router = express.Router();
-let getSeatsRouter  = require('./api/getSeats');
-let storeSeatRouter  = require('./api/storeSeat');
-let resetSeatsRouter  = require('./api/resetSeats');
+let seatsRouter  = require('./api/seats');
 
 
-router.use('/getSeats', getSeatsRouter);
-router.use('/storeSeat', storeSeatRouter);
-router.use('/resetSeats', resetSeatsRouter);
+router.use('/seats', seatsRouter);
+router.use('/scoreboard', scoreboardRouter);
 
 
 module.exports = router;

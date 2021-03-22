@@ -1,8 +1,24 @@
 let express = require('express');
 let router = express.Router();
-const {storeSeat, getSeats, resetSeat} = require('../../modules/manageData');
+const {storeSeat, getSeats, resetSeat, resetSeats} = require('../../modules/manageSeats');
 
-router.post('/', function (req, res, next) {
+router.get('/', function (req,res,next) {
+    res.send(getSeats(req.query.sessionId));
+});
+
+router.post('/reset', function (req, res, next) {
+    let sessionId = parseInt(req.query.sessionId);
+    if (sessionId === undefined) {
+        res.send(false);
+        res.end();
+    } else {
+        resetSeats(sessionId);
+        res.send(true);
+        res.end();
+    }
+});
+
+router.post('/store', function (req, res, next) {
     let seatValue = parseInt(req.query.seat);
     let sessionId = parseInt(req.query.sessionId);
     let name = req.query.name;
@@ -40,3 +56,4 @@ router.post('/', function (req, res, next) {
 });
 
 module.exports = router;
+
