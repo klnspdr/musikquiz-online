@@ -11,6 +11,7 @@
     <link rel="icon" type="image/png" sizes="192x192" href="../assets/img/favicon192.png">
     <link rel="icon" type="image/png" sizes="512x512" href="../assets/img/favicon512.png">
     <link rel="stylesheet" href="../assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/fonts/font-awesome.min.css">
     <link rel="stylesheet" href="../assets/css/styles.min.css">
 <title>Online Musikquiz</title>
 </head>
@@ -25,10 +26,39 @@
                 <div class="col-md-4"><img src="../assets/img/sessel1.png" width="100%"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="r" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
             </div>
         </div>
-    </div><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" style="width: 100%;margin-left: 0;"><button class="btn btn-danger" id="resetGame" type="button">Reset Game</button></span>
+    </div><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" style="width: 100%;margin-left: 0;"><button class="btn btn-danger" id="resetGame" type="button" style="margin-top: 20px;"><i class="fa fa-trash-o" style="font-size: 16px;"></i>&nbsp;Spielfeld zurücksetzen</button></span><span class="text-left border-dark d-md-flex align-items-center justify-content-md-center justify-content-lg-end" style="width: 100%;margin-left: 0;margin-top: 20px;"><button class="btn btn-danger" id="openAddTeamModal" type="button" style="margin: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;" onclick="resetScoreboard()"><i class="fa fa-trash-o" style="font-size: 16px;"></i>&nbsp;Scoreboard zurücksetzen</button><button class="btn btn-success" id="openAddTeamModal" type="button" data-toggle="modal" data-target="#modal" style="margin: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;"><i class="fa fa-plus" style="font-size: 16px;"></i>&nbsp;Team Hinzufügen<br></button></span>
+    <div class="table-responsive" style="margin-bottom: 50px;">
+        <table class="table" id="scoreboard">
+            <thead>
+                <tr style="border-bottom-color: #303030;">
+                    <th style="width: 50px;border-right: 1px none rgb(128,128,128) ;border-bottom-width: 2px;border-bottom-color: rgb(128,128,128);">#</th>
+                    <th style="width: 100px;border-right: 1px none rgb(128,128,128) ;border-bottom-width: 2px;border-bottom-color: rgb(128,128,128);">Punkte</th>
+                    <th style="border-right: 1px none rgb(128,128,128) ;border-bottom-width: 2px;border-bottom-color: rgb(128,128,128);">Name</th>
+                    <th style="border-right: 1px none rgb(128,128,128);border-bottom-width: 2px;border-bottom-color: rgb(128,128,128);width: 160px;"></th>
+                </tr>
+            </thead>
+            <tbody id="scoreboard-body"></tbody>
+        </table>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form>
+                    <div class="modal-header">
+                        <h4 class="modal-title">Team Hinzufügen</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>Name des Teams:</p><input class="form-control" type="text" id="team-name-input" name="team-name" placeholder="Teamname">
+                    </div>
+                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Abbrechen</button><button class="btn btn-success" id="addTeam" type="submit" data-dismiss="modal"><i class="fa fa-plus" style="font-size: 16px;"></i><strong>&nbsp;Hinzufügen</strong></button></div>
+                </form>
+            </div>
+        </div>
+    </div>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/script.min.js"></script>
+    <script src="../assets/js/scoreboard-admin.min.js"></script>
 </body>
 
 </html>

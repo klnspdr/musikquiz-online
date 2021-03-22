@@ -10,9 +10,10 @@ db._.mixin(lodashId)
 db.defaults({ scores: [] })
     .write()
 
+//get scores sort by descending score
 function getScores(){
-    return db.get('scores')
-        .value()
+    return db._.orderBy(db.get('scores')
+        .value(), 'score', 'desc')
 }
 
 module.exports.getScores = getScores;
@@ -64,14 +65,15 @@ module.exports.retractPoint = retractPoint;
 
 function resetScores(){
     let teams = db.get('scores').value();
-    teams.map((team) => {
+
+    let resetTeams = teams.map((team) => {
         return {
             id: team.id,
             name: team.name,
             score: 0
         }
     })
-    db.set('scores', teams)
+    return db.set('scores', resetTeams)
         .write()
 }
 
