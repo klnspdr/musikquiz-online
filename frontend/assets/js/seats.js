@@ -1,7 +1,7 @@
 
 //process clicks of seat buttons
 $("#button1").click(function() {
-    $.post("/api/seats/store?sessionId=1234&name="+$("#name-input").val()+"&seat=1");
+    $.post("/api/seats/store?sessionId=1234&name="+$("#name-input").val()+"&seat=1")
     updateSeats();
 })
 
