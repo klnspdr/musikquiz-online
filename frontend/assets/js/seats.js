@@ -14,7 +14,6 @@ $("#resetGame").click(function(){
 })
 
 socket.on("update-seats", (data) => {
-    console.log(data)
         $(".seat#l").text(data.l);
         $(".seat#m").text(data.m);
         $(".seat#r").text(data.r);
