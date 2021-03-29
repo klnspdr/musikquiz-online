@@ -31,6 +31,7 @@ function resetSeat(sessionId, name) {
 
 function resetSeats (sessionId) {
     seats = {1234: {l: " ",m: " ",r: " "}};
+    return seats["1234"];
 }
 
 module.exports.getSeats = getSeats;

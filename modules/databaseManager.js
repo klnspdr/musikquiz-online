@@ -27,7 +27,7 @@ function addTeam (name){
 }
 module.exports.addTeam = addTeam;
 
-function removeTeam (id){
+function removeTeam (id, number){
     //remove team from db
     return team = db.get('scores')
         .remove({id: id})
@@ -35,7 +35,7 @@ function removeTeam (id){
 }
 module.exports.removeTeam = removeTeam;
 
- function addPoint (id) {
+ function addPoint (id, number) {
     //get old score
      const oldScore = db.get('scores').find({id: id}).value().score;
 
