@@ -21,9 +21,14 @@
     <div style="margin-top: 20px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4"><img src="assets/img/sessel1.png" width="100%"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="l" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
-                <div class="col-md-4"><img src="assets/img/sessel2.png" width="100%"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="m" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
-                <div class="col-md-4"><img src="assets/img/sessel1.png" width="100%"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="r" style="width: 100%;margin-left: 0; font-size:20pt">&nbsp;</span></div>
+                <div class="col-md-4"><img src="assets/img/sessel1.png" width="100%"></div>
+                <div class="col-md-4"><img src="assets/img/sessel2.png" width="100%"></div>
+                <div class="col-md-4"><img src="assets/img/sessel1.png" width="100%"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="l" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="m" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="r" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
             </div>
         </div>
     </div>
@@ -58,6 +63,24 @@
                 </tr>
             </tbody>
         </table>
+    </div>
+
+    <div class="modal fade" role="dialog" tabindex="-1" id="enterSolution">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="submitSolution" action="">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Lösung Eingeben</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                    </div>
+                    <div class="modal-body">
+                        <label for="solutionInput" class="form-label">Deine Lösung: </label><input value="" id="solutionInput" type="text" required />
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-success"><strong><i class="fa fa-check" style="font-size: 16px;"></i> Lösung Einreichen</strong></button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </div>
     <footer style="width: 100%;"><button class="btn btn-link" data-toggle="modal" data-target="#modal" type="button">Wie funktioniert das hier?</button><a class="float-right" href="#" style="margin: 6px;">Datenschutz</a><a class="float-right" href="imprint.html" style="margin: 6px;">Impressum</a></footer>
     <script src="/socket.io/socket.io.js"></script>

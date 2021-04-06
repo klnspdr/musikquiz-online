@@ -21,12 +21,30 @@
     <div style="padding-top: 50px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4"><img src="../assets/img/sessel1.png" width="100%"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="l" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
-                <div class="col-md-4"><img src="../assets/img/sessel2.png" width="100%"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="m" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
-                <div class="col-md-4"><img src="../assets/img/sessel1.png" width="100%"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="r" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
+                <div class="col-md-4"><img src="../assets/img/sessel1.png" width="100%"></div>
+                <div class="col-md-4"><img src="../assets/img/sessel2.png" width="100%"></div>
+                <div class="col-md-4"><img src="../assets/img/sessel1.png" width="100%"></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="l" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="m" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="r" style="width: 100%;margin-left: 0; font-size: 20pt">&nbsp;</span></div>
+            </div>
+            <div class="row">
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="l-solution" style="width: 100%;margin-left: 0; font-size: 10pt">&nbsp;</span></div>
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="m-solution" style="width: 100%;margin-left: 0; font-size: 10pt">&nbsp;</span></div>
+                <div class="col-md-4"><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" id="r-solution" style="width: 100%;margin-left: 0; font-size: 10pt">&nbsp;</span></div>
             </div>
         </div>
-    </div><span class="border-dark d-md-flex align-items-center justify-content-md-center seat" style="width: 100%;margin-left: 0;"><button class="btn btn-danger" id="resetGame" type="button" style="margin-top: 20px;"><i class="fa fa-trash-o" style="font-size: 16px;"></i>&nbsp;Spielfeld zurücksetzen</button></span><span class="text-left border-dark d-md-flex align-items-center justify-content-md-center justify-content-lg-end" style="width: 100%;margin-left: 0;margin-top: 20px;"><button class="btn btn-danger" id="openAddTeamModal" type="button" style="margin: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;" onclick="resetScoreboard()"><i class="fa fa-trash-o" style="font-size: 16px;"></i>&nbsp;Scoreboard zurücksetzen</button><button class="btn btn-success" id="openAddTeamModal" type="button" data-toggle="modal" data-target="#modal" style="margin: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;"><i class="fa fa-plus" style="font-size: 16px;"></i>&nbsp;Team Hinzufügen<br></button></span>
+    </div>
+    <span class="border-dark d-md-flex align-items-center justify-content-md-center seat" style="width: 100%;margin-left: 0;">
+        <button class="btn btn-danger" id="resetGame" type="button" style="margin-top: 20px; margin-right: 10px"><i class="fa fa-trash-o" style="font-size: 16px;"></i>&nbsp;Spielfeld zurücksetzen</button>
+        <button class="btn btn-success" id="askForSolution" type="button" style="margin-top: 20px; margin-left: 10px"><i class="fa fa-check" style="font-size: 16px;"></i>&nbsp;Lösung fordern</button>
+    </span>
+    <span class="text-left border-dark d-md-flex align-items-center justify-content-md-center justify-content-lg-end" style="width: 100%;margin-left: 0;margin-top: 20px;">
+        <button class="btn btn-danger" type="button" style="margin: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;" onclick="resetScoreboard()"><i class="fa fa-trash-o" style="font-size: 16px;"></i>&nbsp;Scoreboard zurücksetzen</button>
+        <button class="btn btn-success" id="openAddTeamModal" type="button" data-toggle="modal" data-target="#modal" style="margin: 10px;margin-left: 10px;margin-bottom: 10px;margin-right: 10px;"><i class="fa fa-plus" style="font-size: 16px;"></i>&nbsp;Team Hinzufügen<br></button>
+    </span>
     <div class="table-responsive" style="margin-bottom: 50px;">
         <table class="table" id="scoreboard">
             <thead>
@@ -38,14 +56,7 @@
                 </tr>
             </thead>
             <tbody id="scoreboard-body">
-                <tr>
-                    <td style="border-bottom-width: 1px; font-weight: bolder;">1</td>
-                    <td>Cell 2</td>
-                    <td style="border-right: 1px none rgb(128,128,128) ;border-bottom-width: 2px;border-bottom-color: rgb(128,128,128);">Name</td>
-                    <td style="border-right: 1px none rgb(128,128,128) ;border-bottom-width: 2px;border-bottom-color: rgb(128,128,128);"><button class="btn btn-danger" type="button" style="width: 40px;margin-right: 10px;" onclick="deleteTeam(${team.id})"><i class="fa fa-trash-o"></i></button>
-                        <div class="btn-group" role="group" style="height: 40px;"><button class="btn btn-warning" type="button" style="width: 40px;" onclick="retractPoint(id)"><i class="fa fa-minus" style="color: rgb(255,255,255);"></i></button><button class="btn btn-success" type="button" style="width: 40px;" onclick="addPoint(id)"><i class="fa fa-plus"></i></button></div>
-                    </td>
-                </tr>
+
             </tbody>
         </table>
     </div>
@@ -64,12 +75,15 @@
             </div>
         </div>
     </div>
+
     <script src="/socket.io/socket.io.js"></script>
     <script src ="../assets/js/initSocketIo.js"></script>
     <script src="../assets/js/jquery.min.js"></script>
     <script src="../assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="../assets/js/scoreboard-admin.js"></script>
     <script src="../assets/js/seats.js"></script>
+    <script src="../assets/js/seats-admin.js"></script>
+
 </body>
 
 </html>
