@@ -24,16 +24,15 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+//initialize socket.io
+const socketIo = require('./modules/socket-io').init(server);
 /**
  * Listen on provided port, on all network interfaces.
  */
 console.log(port);
-server.listen(3000);
+server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
-
-//initialize socket.io
-const socketIo = require('./modules/socket-io').init(server);
 
 /**
  * Normalize a port into a number, string, or false.
